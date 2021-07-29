@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContadorStoreService } from '../contador-store.service';
 
 @Component({
   selector: 'card-contador',
@@ -9,13 +10,15 @@ export class CardContadorComponent implements OnInit {
 
   contador = 0;
 
-  constructor() { }
+  constructor(private contadorStore: ContadorStoreService) {
+    contadorStore.contador.subscribe(contadorValue => this.contador = contadorValue);
+  }
 
   ngOnInit(): void {
   }
 
   public incrementar() {
-    this.contador++;
+    this.contadorStore.incrementar();
   }
 
 }
