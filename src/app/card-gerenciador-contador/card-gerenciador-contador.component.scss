@@ -1,0 +1,14 @@
+mat-card {
+    margin: 2em;
+
+    .contador-container {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        font-size: 2em;
+
+        div {
+            margin: 1em;
+        }
+    }
+}

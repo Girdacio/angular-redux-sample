@@ -1,0 +1,9 @@
+mat-card {
+    margin: 2em;
+
+    .contador-container {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 2em;
+    }
+}

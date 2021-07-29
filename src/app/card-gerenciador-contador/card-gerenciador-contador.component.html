@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header>      
+      <mat-card-title>Componente gerenciador contador</mat-card-title>
+      <mat-card-subtitle>Gestão do contador</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="contador-container">
+            <div>Contador atual</div>
+            <div>{{contador}}</div>
+        </div>      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="resetar()">RESETAR</button>
+    </mat-card-actions>
+</mat-card>
