@@ -5,8 +5,8 @@
     </mat-card-header>
     <mat-card-content>
       <div class="contador-container">
-        <div>{{contador}}</div>
-        <div>{{contador == 1 ? 'Click...' : 'Clicks...'}}</div>
+        <div>{{contador$ | async}}</div>
+        <div>{{(contador$ | async) == 1 ? 'Click...' : 'Clicks...'}}</div>
       </div>
     </mat-card-content>
     <mat-card-actions>

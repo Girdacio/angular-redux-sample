@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CardContadorComponent } from './card-contador/card-contador.component';
 import { MatButtonModule } from '@angular/material/button';
 import { CardGerenciadorContadorComponent } from './card-gerenciador-contador/card-gerenciador-contador.component';
+import { StoreModule } from '@ngrx/store';
+import { contadorReducer } from './contador/contador.reducer';
 
 const APP_COMPONENTS = [
   AppComponent,
@@ -31,7 +33,8 @@ const ANGULAR_MODULES = [
   ],
   imports: [
     ...ANGULAR_MODULES,
-    ...MATERIAL_COMPONENT_MODULES
+    ...MATERIAL_COMPONENT_MODULES,
+    StoreModule.forRoot({ contador: contadorReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

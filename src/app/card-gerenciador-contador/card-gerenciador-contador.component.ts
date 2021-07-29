@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ContadorStoreService } from '../contador-store.service';
+import { resetar } from '../contador/contador.actions';
 
 @Component({
   selector: 'card-gerenciador-contador',
@@ -8,17 +11,17 @@ import { ContadorStoreService } from '../contador-store.service';
 })
 export class CardGerenciadorContadorComponent implements OnInit {
 
-  contador = 0;
+  contador$: Observable<number>;
 
-  constructor(private contadorStore: ContadorStoreService) {
-    contadorStore.contador.subscribe(contadorValue => this.contador = contadorValue);
+  constructor(private store: Store<{ contador: number }>) {
+    this.contador$ = store.select('contador');
   }
 
   ngOnInit(): void {
   }
 
   public resetar() {
-    this.contadorStore.resetar();
+    this.store.dispatch(resetar());
   }
 
 }
