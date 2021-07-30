@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ContadorStoreService } from '../contador-store.service';
 import { incrementar } from '../contador/contador.actions';
 
 @Component({
