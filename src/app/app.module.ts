@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { CardGerenciadorContadorComponent } from './card-gerenciador-contador/card-gerenciador-contador.component';
 import { StoreModule } from '@ngrx/store';
 import { contadorReducer } from './contador/contador.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 const APP_COMPONENTS = [
   AppComponent,
@@ -34,7 +36,8 @@ const ANGULAR_MODULES = [
   imports: [
     ...ANGULAR_MODULES,
     ...MATERIAL_COMPONENT_MODULES,
-    StoreModule.forRoot({ contador: contadorReducer })
+    StoreModule.forRoot({ contador: contadorReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
